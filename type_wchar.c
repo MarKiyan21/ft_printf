@@ -6,7 +6,7 @@
 /*   By: mkyianyt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/30 18:15:58 by mkyianyt          #+#    #+#             */
-/*   Updated: 2017/03/30 18:15:59 by mkyianyt         ###   ########.fr       */
+/*   Updated: 2017/04/01 16:14:53 by mkyianyt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int					type_wchar(va_list *ap, t_var *var, int x, int y)
 	{
 		var->s = ft_strnew(6);
 		var->s = "(null)";
+		ft_putstr(var->s);
 		return ((int)ft_strlen(var->s));
 	}
 	var->s = ft_strnew(count_len_bits(i));

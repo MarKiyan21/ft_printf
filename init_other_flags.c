@@ -6,7 +6,7 @@
 /*   By: mkyianyt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/30 17:54:35 by mkyianyt          #+#    #+#             */
-/*   Updated: 2017/03/30 17:54:37 by mkyianyt         ###   ########.fr       */
+/*   Updated: 2017/04/01 16:06:12 by mkyianyt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 char	*init_other_flags(char *format, t_var *var)
 {
+	init_all(var);
 	while (*format)
 	{
 		format++;

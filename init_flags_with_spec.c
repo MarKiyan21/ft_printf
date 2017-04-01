@@ -6,7 +6,7 @@
 /*   By: mkyianyt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/30 17:51:55 by mkyianyt          #+#    #+#             */
-/*   Updated: 2017/03/30 17:51:59 by mkyianyt         ###   ########.fr       */
+/*   Updated: 2017/04/01 16:08:34 by mkyianyt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 char	*init_flags_with_spec(char *format, va_list *ap, t_var *var)
 {
+	init_all(var);
 	while (*format)
 	{
 		format++;
