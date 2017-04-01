@@ -14,7 +14,6 @@
 
 char	*init_flags_with_spec(char *format, va_list *ap, t_var *var)
 {
-//	init_all(var);
 	while (*format)
 	{
 		format++;
@@ -33,6 +32,5 @@ char	*init_flags_with_spec(char *format, va_list *ap, t_var *var)
 		if (is_modif(*format))
 			init_modif(format, var);
 	}
-//	identify_specificator(*format, ap, var);
 	return (format);
 }

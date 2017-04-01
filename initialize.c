@@ -6,7 +6,7 @@
 /*   By: mkyianyt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/30 17:57:15 by mkyianyt          #+#    #+#             */
-/*   Updated: 2017/03/30 17:57:19 by mkyianyt         ###   ########.fr       */
+/*   Updated: 2017/04/01 14:09:03 by mkyianyt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,8 @@ void	init_flags(char c, t_var *var)
 	{
 		var->minus = 1;
 		var->zero = 0;
-	}else if (c == '#')
+	}
+	else if (c == '#')
 		var->sharp = 1;
 	else if (c == '0' && var->precision == -1 && var->minus == 0)
 		var->zero = 1;
@@ -97,25 +98,3 @@ void	init_modif(char *s, t_var *var)
 	if (ft_strstr(s, "z"))
 		var->spec_z = 1;
 }
-
-//void	init_modif(char *s, t_var *var)
-//{
-//	if (ft_strstr(s, "h") && var->spec_hh != 1)
-//		var->spec_h = 1;
-//	if (ft_strstr(s, "l") && var->spec_ll != 1)
-//		var->spec_l = 1;
-//	if (ft_strstr(s, "j"))
-//		var->spec_j = 1;
-//	if (ft_strstr(s, "z"))
-//		var->spec_z = 1;
-//	if (ft_strstr(s, "hh"))
-//	{
-//		var->spec_h = 0;
-//		var->spec_hh = 1;
-//	}
-//	if (ft_strstr(s, "ll"))
-//	{
-//		var->spec_l = 0;
-//		var->spec_ll = 1;
-//	}
-//}

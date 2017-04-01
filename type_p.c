@@ -6,7 +6,7 @@
 /*   By: mkyianyt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/30 18:13:47 by mkyianyt          #+#    #+#             */
-/*   Updated: 2017/03/30 18:14:08 by mkyianyt         ###   ########.fr       */
+/*   Updated: 2017/04/01 14:02:52 by mkyianyt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int			type_p(va_list *ap, t_var *var)
 		var->s = ft_strnew(64);
 	var->s = my_unsigned_itoa_base(value, 16);
 	if (var->sharp == 1 && var->precision == 0)
-			var->width--;
+		var->width--;
 	else
 		var->width -= 2;
 	var->s = ft_function_1(var->s, var);

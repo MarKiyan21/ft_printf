@@ -6,13 +6,19 @@
 /*   By: mkyianyt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/31 10:08:56 by mkyianyt          #+#    #+#             */
-/*   Updated: 2017/03/31 10:11:57 by mkyianyt         ###   ########.fr       */
+/*   Updated: 2017/04/01 14:12:06 by mkyianyt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_printf(const char *ac, ...)
+static void	ft_printf_k(char c, t_var *var)
+{
+	ft_putchar(c);
+	var->global_len += 1;
+}
+
+int			ft_printf(const char *ac, ...)
 {
 	t_var	*var;
 	va_list	ap;
@@ -30,10 +36,7 @@ int		ft_printf(const char *ac, ...)
 		if (*format == '%' && find_types(format + 1) == -1)
 			format = init_flags_with_spec(format, &ap, var);
 		else if (*format != '%' && *format)
-		{
-			ft_putchar(*format);
-			var->global_len += 1;
-		}
+			ft_printf_k(*format, var);
 		if (*format == '\0')
 			break ;
 		if (*format != '%')

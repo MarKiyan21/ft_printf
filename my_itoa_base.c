@@ -31,15 +31,15 @@ static int	ft_size(intmax_t n, int base)
 
 static int	ft_isneg(intmax_t n)
 {
-	int				neg;
+	int				flag;
 
-	neg = 0;
+	flag = 0;
 	if (n < 0)
-		neg = 1;
-	return (neg);
+		flag = 1;
+	return (flag);
 }
 
-static char	*calc(intmax_t n, int i, char *chain, int base)
+static char	*calc(intmax_t n, int i, char *s, int base)
 {
 	int				isneg;
 	uintmax_t		nb;
@@ -52,20 +52,20 @@ static char	*calc(intmax_t n, int i, char *chain, int base)
 	while (nb > 0)
 	{
 		if (nb % base > 10)
-			chain[i] = ((nb % base - 10 + 97));
+			s[i] = ((nb % base - 10 + 97));
 		else
-			chain[i] = ((nb % base + 48));
+			s[i] = ((nb % base + 48));
 		nb = nb / base;
 		i++;
 	}
 	if (isneg == 1)
 	{
-		chain[i] = '-';
+		s[i] = '-';
 		i++;
 	}
-	chain[i] = '\0';
-	ft_strrev(chain);
-	return (chain);
+	s[i] = '\0';
+	ft_strrev(s);
+	return (s);
 }
 
 char		*my_itoa_base(intmax_t n, int base)

@@ -62,8 +62,6 @@ int			type_x(va_list *ap, t_var *var, int flag)
 		var->s = ft_strnew(1);
 	else
 		var->s = ft_strnew(64);
-//	if (value == 0 && var->precision == 0)
-//		return (0);
 	if (var->precision != 0)
 		var->s = my_unsigned_itoa_base(value, 16);
 	if (var->sharp == 1 && value > 0)
@@ -75,6 +73,5 @@ int			type_x(va_list *ap, t_var *var, int flag)
 		var->s = ft_uppercase(var->s);
 	while (var->s[++i])
 		ft_putchar(var->s[i]);
-//	ft_putstr(var->s);
 	return ((int)ft_strlen(var->s));
 }

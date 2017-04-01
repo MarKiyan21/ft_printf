@@ -57,5 +57,6 @@ int					type_wchar(va_list *ap, t_var *var, int x, int y)
 			var->s = bits_help_3(var->s, i, &x, &y);
 	}
 	var->s[y] = '\0';
+	ft_putstr(var->s);
 	return ((int)ft_strlen(var->s));
 }

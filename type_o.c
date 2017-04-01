@@ -6,7 +6,7 @@
 /*   By: mkyianyt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/30 18:11:05 by mkyianyt          #+#    #+#             */
-/*   Updated: 2017/03/30 18:11:22 by mkyianyt         ###   ########.fr       */
+/*   Updated: 2017/04/01 14:07:57 by mkyianyt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,10 @@ static char	*ft_cast_with_sharp(char *s)
 int			type_o(va_list *ap, t_var *var)
 {
 	unsigned long long	value;
-	int 				len;
+	int					len;
 
 	ft_cast(&value, ap, var);
-	//if (value == 0 && (var->precision >= 0 || var->sharp == 1))
-	//	var->s = ft_strnew(1);
-//	else
-		var->s = ft_strnew(64);
+	var->s = ft_strnew(64);
 	var->s = my_unsigned_itoa_base(value, 8);
 	if (var->sharp == 1 && value > 0)
 		var->width--;
@@ -72,11 +69,9 @@ int			type_o(va_list *ap, t_var *var)
 	len = (int)ft_strlen(var->s);
 	if (value == 0 && var->precision == 0 && !var->sharp)
 	{
-
 		var->s = ft_strnew(0);
 		len = 0;
 		var->s = ft_function_1(var->s, var);
-		//len += var->width;
 		len = (int)ft_strlen(var->s);
 	}
 	ft_putstr(var->s);

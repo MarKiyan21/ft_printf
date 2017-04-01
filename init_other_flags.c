@@ -14,7 +14,6 @@
 
 char	*init_other_flags(char *format, t_var *var)
 {
-//	init_all(var);
 	while (*format)
 	{
 		format++;
@@ -27,11 +26,11 @@ char	*init_other_flags(char *format, t_var *var)
 			format = init_precision(format, var);
 		if (is_modif(*format))
 			init_modif(format, var);
-		if (!(*format > 0 && *format <= 9) && *format != '.' &&
+		if (!(*format > '0' && *format <= '9') && *format != '.' &&
 				!(is_flags(*format)) && !(is_modif(*format)))
 			break ;
 	}
-	var->global_len = write_char(var, *format);
+	var->global_len += write_char(var, *format);
 	format++;
 	return (format);
 }
